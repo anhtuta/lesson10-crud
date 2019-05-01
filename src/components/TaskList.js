@@ -11,20 +11,6 @@ class TaskList extends Component {
         };
     }
 
-    onChange = (event) => {
-        var target = event.target;
-        var name = target.name;
-        var value = target.type === 'checkbox' ? target.checked : target.value;
-        var filter = {
-            name : name === 'filterName' ? value : this.state.filterName,
-            status : name === 'filterStatus' ? value : this.state.filterStatus
-        };
-        this.props.onFilterTable(filter);
-        this.setState({
-            [name] : value
-        });
-    }
-
     onUpdateStatus = (id) => {
         this.props.onUpdateStatus(id);
     }
